@@ -1,0 +1,151 @@
+# Nilai dan satuan pada css part 1
+
+misal 
+
+    .selector {
+        width: 80%; -> 80% adalah "VALUE"
+        height: 500px; -> 500px adalah "UNIT"
+    }
+
+CSS Value 
+
+    - integer 
+    - number 
+    - percentage 
+    - dimension (nilai yang digabungkan dengan satuan )
+
+Integer 
+
+    bilangan bulat, bisa positif bisa negatif, misal 
+
+        .selector {
+            z-index: 1;
+            order: 3;
+            grid-row-end: -4;
+        }
+
+Number 
+
+    hanya angka boleh desimal, misal 
+
+        .selector {
+            opacity: 0.8;
+            transform: scale(2.5);
+        }
+
+Percentage 
+
+    Merepresentaskan sebagian dari nilai tertentu, % selalu relative terhadap nilai yang lain, misal 
+
+        .selector {
+            width: 80%;
+        }
+
+Dimension 
+
+    Number yang memiliki satuan di belakangnya
+
+    Ada 
+        - length
+        - angle 
+        - time 
+        - resolution 
+
+    - angle 
+        -> deg (degree, sudut)
+        -> rad (radial)
+        -> grad (gradien)
+        -> turn (berapa putaran yang diinginkan)
+
+    - time 
+        -> s (second)
+        -> ms (mili second, 1 s = 1000 ms)
+
+    - resolution (sering digunakan saat printing)
+        -> dpi (dot per inch)
+        -> dpcm (dot per centimeter)
+        -> dppx (dot per pixel)
+
+        misal 
+
+            @media print and (min-resolution: 300dpi) {
+
+            }
+
+    - length 
+
+        - > absolute 
+            misal : px, pt, pc, cm, mm, in
+        -> relative
+            %, persentase ukuran relatif terhadap parent
+            em, relatif terhadap ukuran font yang sedang digunakan
+            rem, relatif terhadap ukuran font "root" / <html> 
+            ch, relatif terhadap lebar karakter '0' dari font yang sedang digunakan 
+            vh, relatif terhadap tinggi dari viewport
+            vw, relatif terhadap lebar dari viewport
+            vmin, relatif terhadap dimensi terkecil sebua viewport 
+            vmax, relatif terhadap dimensi terbesar sebuah viewport  
+
+        - > em = relative terhadap ukuran font yang sedang digunakan.
+
+        misal 
+
+            .box {
+                font-size: 30px;
+            }
+
+            .box h1 {
+                font-size: 1em; -> relatif dari parentnya (box), ukurannya 30px;
+            }
+
+            .box p {
+                font-size: 2em; -> relatif dari parentnya (box), ukurannya 60px;
+            }
+
+        -> rem = relatif terhadap ukuran font "root" / <html> 
+
+        misal 
+
+            html {
+                font-size: 50px;
+            }
+
+            .box2 {
+                font-size: 30px;
+            }
+
+            .box2 h1 {
+                font-size: 1rem; -> relatif terhadap ukuran font "root" / <html>, ukurannya 50px;
+            }
+
+            .box2 p {
+                font-size: 2rem; -> relatif terhadap ukuran font "root" / <html> , ukurannya 100px;
+            }
+
+        - ch = relatif terhadap lebar karakter '0' dari font yang sedang digunakan 
+
+        misal 
+
+
+            .box3 {
+                width: 60ch;
+            }
+
+        - vh dan vw = 
+
+        misal 
+
+            .box4 {
+                background-color: lightblue;
+                height: 100vh;
+            }
+
+        - vmin 
+
+        misal 
+
+            .box5 {
+                height: 100vmin;
+                width: 100vmin;
+                background-color: red;
+            }

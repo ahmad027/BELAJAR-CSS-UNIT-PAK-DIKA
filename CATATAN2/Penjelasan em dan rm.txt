@@ -1,0 +1,100 @@
+# Penjelasan em dan rm 
+
+- em 
+    untuk mengatur ukuran misal margin dan padding pada suatu elemen 
+
+    2em = ukurannya 2 kali ukuran font elemen parent nya, defaul-nya 16px 
+
+    kalau tidak mengatur em, otomatis ukurannya disesuaikan tag nya, misal <h2> defaultnya 1.5em atau 24px 
+
+    masalah bisa terjadi karena sifat em itu cascading (bertumpuk), misal 
+
+
+        .typography {
+            font-size: 10px;
+        }
+
+        .col-em {
+            font-size: 2em; 
+        }
+
+        .col-em h2 {
+            font-size: 2em; -> jadi 40px
+        }
+
+        .col-em p {
+            font-size: 1.5em; -> jadi 30px
+        }
+
+- rem 
+
+    kalau font-size tidak disetting dimanapun, default-nya juga 16px 
+
+
+    :root -> html {
+                ....
+            }
+
+    !!! gunakan rem untuk font, em digunakan selain font (margin, padding)
+
+
+    !!! untuk penggunaan rem, ukurannya mengikuti ukuran font-size sesuai elemen yang sama, apabila belum ditentukan otomatis cari parent nya, misal 
+
+    .btn {
+        display: inline-block;
+        background: #333;
+        font-weight: 700;
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 1em 3em; -> ukurannya jadi 
+    }
+
+
+    !!! kalau setting em pada length (padding, margin, dll) relatif terhadap ukuran font-size elemen yang bersangkutan, kalau tidak ada baru ke elemen di atas nya 
+
+
+    !!!   kalau em di setting pada font-size nya maka ukurannya relatif terhadap ukuran parent nya 
+
+
+    !!! Ada permasalahan, saat membuat margin antara 3 buah button (yang berbeda2 ukurannya, regular, small, large), ketika menggunakan em, maka margin nya beda antar button, misal 
+
+        .btn {
+            display: inline-block;
+            background: #333;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 1em 3em;
+            margin: 0 1.5em; -> setiap margin dari button berbeda, karena em-nya relatif terhadap font-size setiap button  
+        }
+
+        .btn-sm {
+            font-size: 0.5em;
+        }
+
+        .btn-lg {
+            font-size: 2em;
+        }
+
+    !!! Agar margin tiap button sama, em di ganti dengan rem 
+
+          .btn {
+            display: inline-block;
+            background: #333;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 1em 3em;
+            margin: 0 1.5em; -> setiap margin dari button sama, karena rem-nya relatif terhadap root, dikarenakan tidak di setting di elemen parent 
+        }
+
+        .btn-sm {
+            font-size: 0.5em;
+        }
+
+        .btn-lg {
+            font-size: 2em;
+        }

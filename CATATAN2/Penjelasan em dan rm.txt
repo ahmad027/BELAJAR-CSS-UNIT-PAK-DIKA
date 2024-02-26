@@ -47,7 +47,7 @@
         color: white;
         text-decoration: none;
         text-transform: uppercase;
-        padding: 1em 3em; -> ukurannya jadi 
+        padding: 1em 3em; 
     }
 
 

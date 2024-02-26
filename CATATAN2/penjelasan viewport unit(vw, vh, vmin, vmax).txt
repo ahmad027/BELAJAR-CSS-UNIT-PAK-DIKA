@@ -1,0 +1,53 @@
+#   penjelasan viewport unit (vw, vh, vmin, vmax)
+
+VIEWPORT UNITS 
+
+    -   vh -> relatif terhadap tinggi dari viewport (area yang kita lihat)
+    -   vw -> relatif terhadap lebar dari viewport (area yang kita lihat)
+    - vmin -> relatif terhadap dimensi terkecil sebuah viewport (area yang kita lihat)
+    - vmax -> relatif terhadap dimensi terbesar sebuah viewport (area yang kita lihat) 
+
+
+ / agar tereset semua 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  line-height: 1.8em;
+}
+
+!!!! em, relatif terhadap font-size pada elemen yang bersangkutan, kalau tdk di setting maka ikut elemen yang diatasnya.
+
+!!! rem, relatif terhadap font-size pada root, kalau tidak disetting maka default 16px 
+
+h1 {
+  font-size: 4rem; -> jadi 4 X 16px (karena defaultnya 16px) = 64px
+  line-height: 1.2em; -> jadi 1.2 X 64 = 76.8
+  // line-height: 1.2rem; -> jadi 1.2 X 16px (karena relatif terhadap font-size pada root ) = 19.2px 
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+  text-align: center;
+}
+
+section {
+  margin: 30px auto;
+  width: 80%;
+}
+
+section .detail {
+  font-size: 1.4rem;
+  text-align: center;
+  border-top: 1px solid black;
+  padding: 0.5em 0;
+  margin-bottom: 2em;
+  color: #333;
+}
+
+section p {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  text-indent: 1em;
+}
